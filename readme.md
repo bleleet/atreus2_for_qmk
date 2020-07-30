@@ -4,7 +4,7 @@
 
 A split keyboard.
 
-* Keyboard Maintainer: QMK Community
+* Keyboard Maintainer: _______
 * Hardware Supported: Keyboardio Atreus2
 * Hardware Availability: [Keyboardio](https://shop.keyboard.io)
 

@@ -34,47 +34,45 @@ enum atreus_keycodes {
 #define RAISE OSL(_RAISE)
 #define _SECH LCMD(KC_SPC)
 #define _HOME LCMD(KC_H)
-#define _VIM KC_BSLS
-#define _TMUX LCTL(KC_B)
-#define OSMCMD OSM(MOD_LGUI)
+#define MTLSTF LSFT_T(KC_Z)
+#define MTRSTF RSFT_T(KC_ENT)
 #define OSMCTL OSM(MOD_LCTL)
-#define OSMALT OSM(MOD_LALT)
-#define OSMSFT OSM(MOD_LSFT)
+#define OSMCMD OSM(MOD_LGUI)
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAK] = LAYOUT(
     KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_ESC,
     KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                      KC_K,    KC_N,    KC_E,    KC_I,    KC_O,
-    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    _HOME,   _SECH,   KC_M,    KC_H,    KC_COMM, KC_DOT,  KC_ENT,
-    OSMSFT,  _______, OSMALT,  KC_BSPC, LOWER,   OSMCTL,  OSMCMD,  RAISE,   KC_TAB,  _VIM,    _TMUX,   OSMSFT
+    MTLSTF,  KC_X,    KC_C,    KC_D,    KC_V,    _HOME,   _SECH,   KC_M,    KC_H,    KC_COMM, KC_DOT,  MTRSTF,
+    KC_LCMD, KC_LCTL, KC_LALT, KC_BSPC, LOWER,   OSMCMD,  OSMCTL,  RAISE,   KC_TAB,  KC_RALT, KC_RCTL, KC_RCMD
   ),
 
   [_QWERTY] = LAYOUT(
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
     KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    KC_ESC,
-    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    _HOME,   _SECH,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_ENT,
-    OSMSFT,  _______, OSMALT,  KC_BSPC, LOWER,   OSMCTL,  OSMCMD,  RAISE,   KC_TAB,  _VIM,    _TMUX,   OSMSFT
+    MTLSTF,  KC_X,    KC_C,    KC_V,    KC_B,    _HOME,   _SECH,   KC_N,    KC_M,    KC_COMM, KC_DOT,  MTRSTF,
+    KC_LCMD, KC_LCTL, KC_LALT, KC_BSPC, LOWER,   OSMCMD,  OSMCTL,  RAISE,   KC_TAB,  KC_RALT, KC_RCTL, KC_RCMD
   ),
 
  [_LOWER] = LAYOUT(
-    KC_HOME, KC_PGUP, KC_PGDN, KC_END,  _______,                   S(KC_E), KC_7,    KC_8,    KC_9,    S(KC_F),
+    KC_HOME, KC_PGUP, KC_PGDN, KC_END,  KC_MPLY,                   S(KC_E), KC_7,    KC_8,    KC_9,    S(KC_F),
     KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT, LANG2,                     S(KC_C), KC_4,    KC_5,    KC_6,    S(KC_D), 
     KC_MRWD, KC_VOLU, KC_VOLD, KC_MFFD, LANG1,   _______, _______, S(KC_A), KC_1,    KC_2,    KC_3,    S(KC_B),
-    KC_MPLY, KC_INS,  KC_CAPS, KC_DEL,  _______, _______, _______, _______, KC_0,    HEXPAD,  _______, _______
+    _______, _______, _______, _______, _______, _______, HEXPAD,  _______, KC_0,    _______, _______, _______
  ),
 
  [_RAISE] = LAYOUT(
     KC_GRV,  KC_QUOT, KC_DQUO, KC_HASH, KC_PIPE,                   KC_BSLS, KC_SLSH, KC_QUES, KC_EXLM, KC_DLR,
     KC_LCBR, KC_RCBR, KC_AMPR, KC_ASTR, KC_PERC,                   KC_AT,   KC_UNDS, KC_MINS, KC_PLUS, KC_EQL,
     KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN, KC_CIRC, _______, _______, KC_TILD, KC_LT,   KC_GT,   KC_SCLN, KC_COLN,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    _______, _______, _______, KC_BSLS, _______, LCTL(KC_B), _______, _______, _______, _______, _______, _______
  ),
 
  [_ADJUST] = LAYOUT(
     _______, _______, _______, _______, _______,                   KC_F14,  KC_F7,   KC_F8,   KC_F9,   KC_F15,
     _______, _______, _______, _______, _______,                   KC_F12,  KC_F4,   KC_F5,   KC_F6,   KC_F13,
-    _______, _______, _______, _______, _______, _______, _______, KC_F10,  KC_F1,   KC_F2,   KC_F3,   KC_F11,
+    KC_CAPS, KC_DEL,  KC_INS,  _______, _______, _______, _______, KC_F10,  KC_F1,   KC_F2,   KC_F3,   KC_F11,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
  )
 };

@@ -31,9 +31,11 @@ enum atreus_keycodes {
 };
 
 #define LOWER LT(_LOWER,KC_SPC)
-#define RAISE OSL(_RAISE)
+#define RAISE LT(_RAISE,KC_BSPC)
 #define _SECH LCMD(KC_SPC)
 #define _HOME LCMD(KC_H)
+#define _VIM  KC_BSLS
+#define _TMUX LCTL(KC_B)
 #define MTLSTF LSFT_T(KC_Z)
 #define MTRSTF RSFT_T(KC_ENT)
 #define OSMCTL OSM(MOD_LCTL)
@@ -45,14 +47,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_ESC,
     KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                      KC_K,    KC_N,    KC_E,    KC_I,    KC_O,
     MTLSTF,  KC_X,    KC_C,    KC_D,    KC_V,    _HOME,   _SECH,   KC_M,    KC_H,    KC_COMM, KC_DOT,  MTRSTF,
-    KC_LCMD, KC_LCTL, KC_LALT, KC_BSPC, LOWER,   OSMCMD,  OSMCTL,  RAISE,   KC_TAB,  KC_RALT, KC_RCTL, KC_RCMD
+    KC_LCMD, KC_LCTL, KC_LALT, _VIM,    LOWER,   OSMCMD,  OSMCTL,  RAISE,   KC_TAB,  KC_RALT, KC_RCTL, KC_RCMD
   ),
 
   [_QWERTY] = LAYOUT(
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
     KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    KC_ESC,
     MTLSTF,  KC_X,    KC_C,    KC_V,    KC_B,    _HOME,   _SECH,   KC_N,    KC_M,    KC_COMM, KC_DOT,  MTRSTF,
-    KC_LCMD, KC_LCTL, KC_LALT, KC_BSPC, LOWER,   OSMCMD,  OSMCTL,  RAISE,   KC_TAB,  KC_RALT, KC_RCTL, KC_RCMD
+    KC_LCMD, KC_LCTL, KC_LALT, _VIM,    LOWER,   OSMCMD,  OSMCTL,  RAISE,   KC_TAB,  KC_RALT, KC_RCTL, KC_RCMD
   ),
 
  [_LOWER] = LAYOUT(
@@ -66,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_GRV,  KC_QUOT, KC_DQUO, KC_HASH, KC_PIPE,                   KC_BSLS, KC_SLSH, KC_QUES, KC_EXLM, KC_DLR,
     KC_LCBR, KC_RCBR, KC_AMPR, KC_ASTR, KC_PERC,                   KC_AT,   KC_UNDS, KC_MINS, KC_PLUS, KC_EQL,
     KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN, KC_CIRC, _______, _______, KC_TILD, KC_LT,   KC_GT,   KC_SCLN, KC_COLN,
-    _______, _______, _______, KC_BSLS, _______, LCTL(KC_B), _______, _______, _______, _______, _______, _______
+    _______, _______, _______, _TMUX,   _______, _______, _______, _______, _______, _______, _______, _______
  ),
 
  [_ADJUST] = LAYOUT(

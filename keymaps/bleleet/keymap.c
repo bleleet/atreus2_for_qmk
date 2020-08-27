@@ -46,8 +46,8 @@ enum atreus_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAK] = LAYOUT(
     MTLCTL,  KC_W,    KC_F,    KC_P,    KC_B,                      KC_J,    KC_L,    KC_U,    KC_Y,    MTRCTL,
-    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                      KC_K,    KC_N,    KC_E,    KC_I,    KC_O,
-    MTLSTF,  KC_X,    KC_C,    KC_D,    KC_V,    _HOME,   _SECH,   KC_M,    KC_H,    KC_COMM, KC_DOT,  MTRSTF,
+    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                      KC_M,    KC_N,    KC_E,    KC_I,    KC_O,
+    MTLSTF,  KC_X,    KC_C,    KC_D,    KC_V,    _HOME,   _SECH,   KC_K,    KC_H,    KC_COMM, KC_DOT,  MTRSTF,
     KC_LCMD, KC_LCTL, KC_LALT, _VIM,    LOWER,   _TMUX,   OSMCMD,  RAISE,   KC_TAB,  KC_RALT, KC_RCTL, KC_RCMD
   ),
 

@@ -35,26 +35,25 @@ enum atreus_keycodes {
 #define _SECH LCMD(KC_SPC)
 #define _HOME LCMD(KC_H)
 #define _TMUX LCTL(KC_B)
-#define MTESC RGUI_T(KC_ESC)
-#define MTLSTF LSFT_T(KC_Z)
-#define MTRSTF RSFT_T(KC_ENT)
 #define OSMCMD OSM(MOD_LGUI)
 #define OSMCTL OSM(MOD_LCTL)
+#define OSMALT OSM(MOD_LALT)
+#define OSMSFT OSM(MOD_LSFT)
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAK] = LAYOUT(
-    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                      KC_J,    KC_L,    KC_U,    KC_Y,    MTESC,
+    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_ESC,
     KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                      KC_M,    KC_N,    KC_E,    KC_I,    KC_O,
-    MTLSTF,  KC_X,    KC_C,    KC_D,    KC_V,    _HOME,   _SECH,   KC_K,    KC_H,    KC_COMM, KC_DOT,  MTRSTF,
-    KC_LCMD, KC_LCTL, KC_LALT, KC_BSPC, LOWER,   OSMCMD,  OSMCTL,  RAISE,   KC_TAB,  KC_RALT, KC_RCTL, KC_RCMD
+    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    _HOME,   _SECH,   KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_ENT,
+    OSMCMD,  OSMCTL,  OSMALT,  KC_BSPC, LOWER,   OSMSFT,  OSMSFT,  RAISE,   KC_TAB,  OSMALT,  OSMCTL,  OSMCMD
   ),
 
   [_QWERTY] = LAYOUT(
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
-    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    MTESC,
-    MTLSTF,  KC_X,    KC_C,    KC_V,    KC_B,    _HOME,   _SECH,   KC_N,    KC_M,    KC_COMM, KC_DOT,  MTRSTF,
-    KC_LCMD, KC_LCTL, KC_LALT, KC_BSPC, LOWER,   OSMCMD,  OSMCTL,  RAISE,   KC_TAB,  KC_RALT, KC_RCTL, KC_RCMD
+    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    KC_ESC,
+    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    _HOME,   _SECH,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_ENT,
+    OSMCMD,  OSMCTL,  OSMALT,  KC_BSPC, LOWER,   OSMSFT,  OSMSFT,  RAISE,   KC_TAB,  OSMALT,  OSMCTL,  OSMCMD
   ),
 
  [_LOWER] = LAYOUT(
@@ -68,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_GRV,  KC_QUOT, KC_DQUO, KC_HASH, KC_PIPE,                   KC_BSLS, KC_SLSH, KC_QUES, KC_EXLM, KC_DLR,
     KC_LCBR, KC_RCBR, KC_AMPR, KC_ASTR, KC_PERC,                   KC_AT,   KC_UNDS, KC_MINS, KC_PLUS, KC_EQL,
     KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN, KC_CIRC, _______, _______, KC_TILD, KC_SCLN, _TMUX,   KC_COLN, _______,
-    _______, _______, _______, KC_DEL,  _______, KC_CAPS, _______, _______, KC_INS,  _______, _______, _______
+    OSMCTL,  _______, _______, KC_DEL,  _______, KC_CAPS, _______, _______, KC_INS,  _______, _______, OSMCTL
  ),
 
  [_ADJUST] = LAYOUT(

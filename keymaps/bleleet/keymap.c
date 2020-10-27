@@ -31,6 +31,7 @@ enum atreus_keycodes {
     _QUICK2,
     _QUICK3,
     _QUICK4,
+    _QUICK5,
     _HEXPAD
 };
 
@@ -52,20 +53,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_ESC,
     KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                      KC_M,    KC_N,    KC_E,    KC_I,    KC_O,
     _MTLSFT, KC_X,    KC_C,    KC_D,    KC_V,    _HOME,   _SECH,   KC_K,    KC_H,    KC_COMM, KC_DOT,  _MTRSFT,
-    _OSMCMD, _OSMCTL, _OSMALT,  KC_TAB, LOWER,   _OSMCTL, _OSMCMD, RAISE,   _TMUX,  _OSMALT, _OSMCTL, _OSMCMD
+    _OSMCMD, _OSMCTL, _OSMALT,  KC_TAB, LOWER,   _OSMCTL, _OSMCMD, RAISE,   _TMUX,  _OSMALT, _OSMCMD, _OSMCTL
   ),
 
   [_QWERTY] = LAYOUT(
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
     KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    KC_ESC,
     _MTLSFT, KC_X,    KC_C,    KC_V,    KC_B,    _HOME,   _SECH,   KC_N,    KC_M,    KC_COMM, KC_DOT,  _MTRSFT,
-    _OSMCMD, _OSMCTL, _OSMALT,  KC_TAB, LOWER,   _OSMCTL, _OSMCMD, RAISE,   _TMUX,  _OSMALT, _OSMCTL, _OSMCMD
+    _OSMCMD, _OSMCTL, _OSMALT,  KC_TAB, LOWER,   _OSMCTL, _OSMCMD, RAISE,   _TMUX,  _OSMALT, _OSMCMD, _OSMCTL
   ),
 
  [_LOWER] = LAYOUT(
     KC_HOME, KC_PGUP, KC_PGDN, KC_END,  KC_MPLY,                   KC_RBRC, KC_RCBR, KC_QUES, KC_EXLM, KC_COLN,
     KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT, _LANG1,                    KC_RPRN, KC_UNDS, KC_MINS, KC_PLUS, KC_EQL,
-    _QUICK1, _QUICK2, _QUICK3, _QUICK4, _LANG2,  _______, _______, KC_DQUO, KC_QUOT, KC_SCLN, KC_LT,   KC_GT,
+    _QUICK1, _QUICK2, _QUICK3, _QUICK4, _QUICK5, _______, _______, KC_DQUO, KC_QUOT, KC_SCLN, KC_LT,   KC_GT,
     KC_MRWD, KC_VOLU, KC_VOLD, KC_MFFD, _______, _______, _______, _______, _______, _______, _______, _______
  ),
 
@@ -78,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
  [_ADJUST] = LAYOUT(
     _______, _______, _______, _______, _______,                   KC_F14,  KC_F7,   KC_F8,   KC_F9,   KC_F15,
-    _______, _______, _______, _______, _______,                   KC_F12,  KC_F4,   KC_F5,   KC_F6,   KC_F13,
+    _______, _______, _______, _______, _LANG2,                    KC_F12,  KC_F4,   KC_F5,   KC_F6,   KC_F13,
     _______, _______, _______, _______, _______, _______, _______, KC_F10,  KC_F1,   KC_F2,   KC_F3,   KC_F11,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_INS,  KC_DEL,  KC_CAPS
  )
@@ -119,6 +120,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case _QUICK4:
                 SEND_STRING("\"\"");
                 SEND_STRING(SS_TAP(X_LEFT));
+                break;
+            case _QUICK5:
+                SEND_STRING("{}");
+                SEND_STRING(SS_TAP(X_LEFT));
+                SEND_STRING(SS_TAP(X_ENT));
                 break;
             case _HEXPAD:
                 SEND_STRING("0x");
